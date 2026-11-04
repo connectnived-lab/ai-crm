@@ -66,4 +66,4 @@ MIT License. Copyright (c) 2026 Nived NS.
 
 Created and owned by Nived NS - https://github.com/connectnived-lab
 
-Built by Nived NS
+Created and owned by Nived NS - https://github.com/connectnived-lab
