@@ -1,0 +1,21 @@
+{
+  "name": "ai-crm",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "author": "Nived NS",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/unit/*.test.js",
+    "e2e": "python3 tests/e2e/smoke.py",
+    "start": "python3 -m http.server 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/connectnived-lab/ai-crm"
+  }
+}

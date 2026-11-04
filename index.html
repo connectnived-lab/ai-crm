@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI CRM · Nived NS</title>
+<meta name="description" content="A lightweight CRM: organise leads, notes and follow-ups, with pipeline insights and next steps.">
+<meta property="og:title" content="AI CRM">
+<meta property="og:description" content="Leads, notes, follow-ups and pipeline insights. Demo mode runs offline.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="src/crm.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo" aria-hidden="true">◆</span><h1>AI CRM</h1></div>
+  <div class="top-actions">
+    <span id="mode-badge" class="badge">Demo mode · offline</span>
+    <button type="button" class="ghost small" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel">Settings</button>
+  </div>
+</header>
+<section id="settings-panel" class="card" hidden></section>
+<main>
+  <section class="card" aria-labelledby="insights-title">
+    <div class="row between">
+      <h2 id="insights-title">Pipeline</h2>
+      <button type="button" class="ghost small" id="briefing-btn">Get briefing</button>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <p id="briefing" class="output" role="status" aria-live="polite">Press “Get briefing” for priorities and risks.</p>
+  </section>
+
+  <div class="grid-2">
+    <section class="card" aria-labelledby="add-title">
+      <h2 id="add-title">Add a lead</h2>
+      <label for="paste-text">Paste details (optional)</label>
+      <textarea id="paste-text" rows="4" placeholder="Name: Ravi K&#10;Company: Acme Foods&#10;ravi@acme.io&#10;Budget: 5000"></textarea>
+      <div class="row" style="margin-top:8px">
+        <button type="button" class="ghost small" id="parse-btn">Fill from pasted text</button>
+      </div>
+      <form id="lead-form" class="form-grid" novalidate>
+        <div><label for="lead-name">Name</label><input type="text" id="lead-name" required autocomplete="off"></div>
+        <div><label for="lead-company">Company</label><input type="text" id="lead-company" autocomplete="off"></div>
+        <div><label for="lead-email">Email</label><input type="email" id="lead-email" autocomplete="off"></div>
+        <div><label for="lead-phone">Phone</label><input type="text" id="lead-phone" autocomplete="off"></div>
+        <div><label for="lead-value">Deal value</label><input type="number" id="lead-value" min="0" step="1"></div>
+        <div><label for="lead-source">Source</label><input type="text" id="lead-source" autocomplete="off"></div>
+        <div class="span-2"><button type="submit" id="lead-add">Add lead</button></div>
+      </form>
+      <p id="lead-status" class="hint" role="status" data-kind="info"></p>
+    </section>
+
+    <section class="card" aria-labelledby="detail-title">
+      <h2 id="detail-title">Lead details</h2>
+      <div id="detail" class="detail"><p class="empty">Select a lead in the table to see its notes and follow-up.</p></div>
+    </section>
+  </div>
+
+  <section class="card" aria-labelledby="leads-title">
+    <div class="row between">
+      <h2 id="leads-title">Leads</h2>
+      <div class="row">
+        <label for="filter-query" class="sr-only">Search leads</label>
+        <input type="search" id="filter-query" placeholder="Search name, company, email" autocomplete="off" class="filter-input">
+        <label for="filter-stage" class="sr-only">Filter by stage</label>
+        <select id="filter-stage" class="filter-select"></select>
+        <label for="sort-by" class="sr-only">Sort leads</label>
+        <select id="sort-by" class="filter-select">
+          <option value="value">Sort: value</option>
+          <option value="followUp">Sort: follow-up date</option>
+          <option value="name">Sort: name</option>
+        </select>
+      </div>
+    </div>
+    <div class="table-wrap" id="leads-wrap"></div>
+  </section>
+</main>
+<footer class="foot">Built by Nived NS</footer>
+<script type="module" src="src/app.js"></script>
+</body>
+</html>

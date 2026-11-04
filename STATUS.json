@@ -1,0 +1,14 @@
+{
+  "tests_passed": 39,
+  "e2e_passed": true,
+  "verified": [
+    "node --test unit suite: 39/39 pass (crm rules, parsing, insights, briefing, llm, settings)",
+    "Playwright smoke (python3, local Chromium): 28 checks across 390x844 and 1440x900 pass: add lead, paste-parse, search, notes, demo and mocked live briefing, no console errors, no horizontal scroll",
+    "desktop and mobile screenshots viewed",
+    "cover.png 1200x630 from real UI screenshot"
+  ],
+  "unverified": [
+    "live mode against a real external endpoint (mocked only)",
+    "GitHub Actions CI run (not executed here)"
+  ]
+}

@@ -1,0 +1,53 @@
+/* Shared family look: warm off-white, ink text, burnt orange accent. */
+:root{--bg:#faf6f1;--ink:#1d1b19;--muted:#6b645d;--accent:#d9531e;--accent-ink:#fff;--card:#fff;--line:#e8e0d6;--ok:#2f7d4f;--warn:#9a5200;--err:#b42318;--radius:16px;--shadow:0 6px 24px rgba(40,25,10,.08);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;max-width:100%;overflow-x:hidden}
+body{min-height:100vh;display:flex;flex-direction:column;line-height:1.5;font-size:16px}
+[hidden]{display:none !important}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line);background:#fffdf9;position:sticky;top:0;z-index:2}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand h1{font-size:1.15rem;margin:0}
+.logo{color:var(--accent);font-size:1.3rem}
+.top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+main{flex:1;width:100%;max-width:1100px;margin:0 auto;padding:20px;display:grid;gap:18px;min-width:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;min-width:0}
+.card h2{font-size:1.05rem;margin:0 0 10px}
+.grid-2{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:900px){.grid-2{grid-template-columns:1fr 1fr}}
+label{display:block;font-weight:600;font-size:.9rem;margin:10px 0 4px}
+.radio-row{display:flex;align-items:center;gap:8px;font-weight:500;margin:6px 0;min-height:32px}
+fieldset{border:0;padding:0;margin:0}
+legend{font-weight:600;font-size:.9rem;margin-bottom:4px}
+input,select,textarea,button{font:inherit}
+input[type=text],input[type=number],input[type=email],input[type=url],input[type=password],input[type=date],select,textarea{width:100%;padding:10px 12px;border:1px solid #d6cbbd;border-radius:10px;background:#fff;color:var(--ink);min-height:44px}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid #f5b49a;outline-offset:2px;border-color:var(--accent)}
+button{cursor:pointer;border:0;border-radius:999px;padding:10px 18px;background:var(--accent);color:var(--accent-ink);font-weight:600;min-height:44px}
+button:hover{filter:brightness(.96)}
+button.ghost{background:transparent;color:var(--ink);border:1px solid #d6cbbd}
+button.small{min-height:34px;padding:6px 12px;font-size:.85rem}
+button:disabled{opacity:.5;cursor:not-allowed}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.hint{color:var(--muted);font-size:.85rem;margin:6px 0}
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#f3e4d9;color:#7a3413;font-size:.8rem;font-weight:600}
+.badge.live{background:#dcefe3;color:#1d5a36}
+.output{white-space:pre-wrap;background:#fbf8f4;border:1px solid var(--line);border-radius:12px;padding:14px;min-height:60px;overflow-wrap:anywhere}
+[data-kind=error]{color:var(--err)}
+[data-kind=ok]{color:var(--ok)}
+[data-kind=warn]{color:var(--warn)}
+.settings{margin-bottom:0}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+.table-wrap{overflow-x:auto}
+.foot{text-align:center;color:var(--muted);font-size:.8rem;padding:18px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.empty{color:var(--muted);font-style:italic}
+@media print{.topbar,.no-print,.foot{display:none !important}body{background:#fff}main{padding:0;max-width:none}.card{box-shadow:none;border:0}}
+
+.chat{min-height:260px;max-height:440px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding:4px}
+.msg{max-width:88%;padding:10px 14px;border-radius:14px;background:#f4efe8}
+.msg p{margin:0}
+.msg-user{align-self:flex-end;background:var(--accent);color:#fff}
+.msg-user .hint{color:#fff}
+.msg-assistant{align-self:flex-start;border:1px solid var(--line);background:#fff}
+.msg-text{margin:0}
