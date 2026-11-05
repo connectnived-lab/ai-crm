@@ -205,7 +205,7 @@ async function briefing() {
         model: settings.model,
         messages: crm.buildInsightMessages(leads, crm.insights(leads, new Date()), new Date()),
       });
-      out.textContent = text;
+      out.textContent = text.replace(/\*\*/g, '').replace(/^\s*#{1,6}\s+/gm, '');
     } else {
       out.textContent = crm.demoBriefing(leads, new Date());
     }
